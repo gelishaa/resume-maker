@@ -1,23 +1,28 @@
-import React from "react";
-import { Button, Checkbox, Form, Input, message } from 'antd';
+import React, { useState,useEffect  } from 'react';
+
+import { Button, Checkbox, Form, Input, message, Spin } from 'antd';
 import FormItem from "antd/es/form/FormItem";
 import '../resources/authentication.css'
-import { Link } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import axios from 'axios'
 
 
 function Register() {
-
+    const navigate = useNavigate()
     const onFinish = async(values) => {
         try{
             await axios.post('/api/user/register' , values)
             message.success('Registration successfull')    
         } catch (error){
             message.error('Registration failed')
-
         }
     }
-
+    useEffect(()=>{
+            if(localStorage.getItem('logged-user'))
+            {
+                navigate('/home')
+            }
+        })
     return (
         <div className="auth-parent">
             <Form layout='vertical' onFinish={onFinish}>

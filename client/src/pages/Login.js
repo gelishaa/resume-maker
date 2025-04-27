@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, Checkbox, Form, Input, message } from 'antd';
 import {Link, useNavigate} from 'react-router-dom'
 import FormItem from "antd/es/form/FormItem";
@@ -17,6 +17,13 @@ function Register() {
 
         }
     }
+
+    useEffect(()=>{
+        if(localStorage.getItem('logged-user'))
+        {
+            navigate('/home')
+        }
+    })
 
     return (
         <div className="auth-parent">
