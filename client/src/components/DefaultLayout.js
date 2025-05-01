@@ -1,7 +1,7 @@
 import React from 'react'
 import './../resources/defaultlayout.css'
 import { Button, Dropdown } from 'antd'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 function DefaultLayout(props) {
     const user = JSON.parse(localStorage.getItem('logged-user'));
     const navigate = useNavigate()
@@ -12,17 +12,17 @@ function DefaultLayout(props) {
     const items = [{
         key: '1',
         label: (
-          <a target="_blank" rel="noopener noreferrer" href="/home">
+          <Link to="/home">
             Home
-          </a>
+          </Link>
         ),
       },
       {
         key: '2',
         label: (
-          <a target="_blank" rel="noopener noreferrer" href="/profile">
+          <Link to="/profile">
             Profile
-          </a>
+          </Link>
         ),
       },
       {
