@@ -23,7 +23,19 @@ app.post('/register', async(req,res) => {
     try {
         const newuser = new User(req.body)
         await newuser.save()
-        res.send('Реєстрація успішна')
+        res.send('Register successful')
+       
+    } catch (error) {
+        res.status(400).json(error)   
+    }
+})
+
+app.post('/update', async(req,res) => {
+
+    try {
+        await User.findByIdAndUpdate({_id : req.body._id}, req.body)
+        const user = await User.findOne({_id : req.body._id})
+        res.send(user)
        
     } catch (error) {
         res.status(400).json(error)   
