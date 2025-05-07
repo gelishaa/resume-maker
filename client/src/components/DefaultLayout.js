@@ -40,7 +40,7 @@ function DefaultLayout(props) {
                     <Button>{user.username}</Button>
                 </Dropdown>
             </div>
-            <div className='content'>
+            <div className='content' style={{overflow:'scroll'}}>
                 {props.children}
             </div>
         </div>
