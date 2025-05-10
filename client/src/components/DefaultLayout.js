@@ -35,7 +35,7 @@ function DefaultLayout(props) {
     return (
         <div className='layout'>
             <div className='header'>
-                <h1>Resume Maker</h1>
+                <h1 onClick={()=>navigate('/home')} style={{cursor:'pointer'}}>Resume Maker</h1>
                 <Dropdown menu={{ items }} placement="bottomLeft">
                     <Button>{user.username}</Button>
                 </Dropdown>
