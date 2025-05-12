@@ -35,13 +35,14 @@ function Templates() {
                 <style>
                     @page { margin: 20mm; }
                     body { margin: 0; padding: 20px; font-family: Arial, sans-serif; }
+
                     @media print {
                         @page {
                             margin: 0;
                         }
                         body {
-                            margin: 1cm;
-                        }
+                        zoom: 1.2; 
+                    }
                     }
                 </style>
             </head>
