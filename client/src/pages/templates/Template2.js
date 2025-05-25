@@ -12,6 +12,7 @@ const Template2 = () => {
           <p>{user.email}</p>
           <p>{user.mobileNumber}</p>
           <p>{user.address}</p>
+          <p><a href={user.portfolio} target="_blank">Portfolio</a></p>
         </div>
       </div>
 

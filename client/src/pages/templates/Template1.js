@@ -11,6 +11,7 @@ const Template1 = () => {
                     <p>{user.email}</p>
                     <p>{user.address}</p>
                     <p>{user.phoneNumber}</p>
+                    <p><a href={user.portfolio} target="_blank">Portfolio</a></p>
                 </div>
             </div>
             <div className="divider mt-2"></div>
